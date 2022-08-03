@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 public class VideoCameraAccess : MonoBehaviour
 {
-    static WebCamTexture backCam;
+    /*
+    [SyncVar]
+    private WebCamTexture backCam;
 
     void Start()
     {
@@ -14,4 +17,5 @@ public class VideoCameraAccess : MonoBehaviour
         if (!backCam.isPlaying)
             backCam.Play();
     }
+    */
 }

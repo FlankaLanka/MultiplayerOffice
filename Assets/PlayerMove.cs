@@ -16,6 +16,7 @@ public class PlayerMove : NetworkBehaviour
     private CharacterController controller;
     private Transform cam;
 
+    public bool isHosting = false;
 
     // Use this for initialization
     void Start()
@@ -35,7 +36,7 @@ public class PlayerMove : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isLocalPlayer)
+        if (isLocalPlayer && !isHosting)
         {
             // is the controller on the ground?
             if (controller.isGrounded)

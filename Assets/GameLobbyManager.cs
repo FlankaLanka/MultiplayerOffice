@@ -12,18 +12,7 @@ public class GameLobbyManager : MonoBehaviour
     [SerializeField] private Button hostButton;
     [SerializeField] private InputField nameField;
     [SerializeField] private InputField ipAddressField;
-    [SerializeField] private PlayerName playerName;
     [SerializeField] private GameObject logoutCanvas;
-
-    private void Start()
-    {
-        nameField.onValueChanged.AddListener(delegate { UpdateName(); });
-    }
-
-    private void UpdateName()
-    {
-        playerName.pname = nameField.text;
-    }
 
     public void JoinGame()
     {
