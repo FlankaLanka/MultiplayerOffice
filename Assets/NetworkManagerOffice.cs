@@ -39,5 +39,10 @@ public class NetworkManagerOffice : NetworkManager
         NetworkServer.Spawn(ball1);
         ball1.transform.position = ballspawn1.position;
         //NetworkServer.Spawn(ball2);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7febcf6a220ec30fec5bd883a73064b86d71e86f
     }
 }

@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 41c22ee7bfc704eab992da1534b3866c
+=======
+<<<<<<< HEAD:Assets/ClubroomHost.cs.meta
+guid: a87698a3b44514c86a6b84a58b60173c
+=======
+guid: 41c22ee7bfc704eab992da1534b3866c
+>>>>>>> 7febcf6a220ec30fec5bd883a73064b86d71e86f:Assets/BallManager.cs.meta
+>>>>>>> 7febcf6a220ec30fec5bd883a73064b86d71e86f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

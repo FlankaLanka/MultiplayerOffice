@@ -20,7 +20,11 @@ public class ClubroomHost : NetworkBehaviour
             if(!hostingClubroom)
             {
                 CmdHostClubroomSettings();
+<<<<<<< HEAD
                 transform.position = new Vector3(-5.67000008f, 2.73000002f, 30.25f);
+=======
+                transform.position = new Vector3(-13.1707382f, 1.0799998f, 5.30400372f);
+>>>>>>> 7febcf6a220ec30fec5bd883a73064b86d71e86f
                 transform.eulerAngles = new Vector3(0, 90, 0);
                 GetComponent<PlayerMove>().isHosting = true;
                 hostingClubroom = true;

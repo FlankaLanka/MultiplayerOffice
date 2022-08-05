@@ -13,7 +13,10 @@ public class GameLobbyManager : MonoBehaviour
     [SerializeField] private InputField nameField;
     [SerializeField] private InputField ipAddressField;
     [SerializeField] private GameObject logoutCanvas;
+<<<<<<< HEAD
     [SerializeField] private VivoxLoginCred voiceChat;
+=======
+>>>>>>> 7febcf6a220ec30fec5bd883a73064b86d71e86f
 
     public void JoinGame()
     {
