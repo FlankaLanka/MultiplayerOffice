@@ -7,60 +7,25 @@ using Mirror;
 public class SetPlayerName : NetworkBehaviour
 {
     [SyncVar(hook = nameof(SetName))]
-    private string playerName;
-    public Material grn;
-
+    public string playerName;
+    [SerializeField] private Text nametag;
+    
     private void SetName(string oldname, string newname)
     {
-        GetComponentInChildren<Text>().text = newname;
+        nametag.text = newname;
     }
 
-
-    // Start is called before the first frame update
-    public override void OnStartLocalPlayer()
+    public void Start()
     {
-        CmdChangeName();
-    }
-
-    [Command(requiresAuthority = false)]
-    private void CmdChangeName()
-    {
-        RpcChangeName();
-    }
-
-    [ClientRpc]
-    private void RpcChangeName()
-    {
-        GetComponentInChildren<Text>().text = playerName;
-    }
-
-    /*
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.N))
+        if(isLocalPlayer)
         {
-            //ChangeColor();
-            if(isLocalPlayer)
-            {
-                //GetComponent<MeshRenderer>().material = grn;
-                CmdChangeColor();
-            }
+            CmdChangeName(PlayerPrefs.GetString("Name"));
         }
     }
 
     [Command(requiresAuthority = false)]
-    private void CmdChangeColor()
+    private void CmdChangeName(string pname)
     {
-            RpcChangeColorx();
-        
+        playerName = pname;
     }
-
-    [ClientRpc]
-    private void RpcChangeColorx()
-    {
-            GetComponent<MeshRenderer>().material = grn;
-        
-    }
-    */
-
 }

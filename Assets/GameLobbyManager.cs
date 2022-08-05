@@ -12,21 +12,13 @@ public class GameLobbyManager : MonoBehaviour
     [SerializeField] private Button hostButton;
     [SerializeField] private InputField nameField;
     [SerializeField] private InputField ipAddressField;
-    [SerializeField] private PlayerName playerName;
     [SerializeField] private GameObject logoutCanvas;
-
-    private void Start()
-    {
-        nameField.onValueChanged.AddListener(delegate { UpdateName(); });
-    }
-
-    private void UpdateName()
-    {
-        playerName.pname = nameField.text;
-    }
+    [SerializeField] private VivoxLoginCred voiceChat;
 
     public void JoinGame()
     {
+        voiceChat.Login(nameField.text);
+
         PlayerPrefs.SetString("Name", nameField.text);
 
         string ipAddress = ipAddressField.text;
@@ -35,16 +27,20 @@ public class GameLobbyManager : MonoBehaviour
 
         LoginCanvas.SetActive(false);
         logoutCanvas.SetActive(true);
+
     }
 
     public void HostGame()
     {
+        voiceChat.Login(nameField.text);
+
         PlayerPrefs.SetString("Name", nameField.text);
 
         netManager.StartHost();
 
         LoginCanvas.SetActive(false);
         logoutCanvas.SetActive(true);
+
     }
 
     public void UnjoinGame()
@@ -52,6 +48,8 @@ public class GameLobbyManager : MonoBehaviour
         netManager.StopClient();
         LoginCanvas.SetActive(true);
         logoutCanvas.SetActive(false);
+
+        voiceChat.Logout();
     }
 
     public void UnhostGame()
@@ -59,5 +57,7 @@ public class GameLobbyManager : MonoBehaviour
         netManager.StopHost();
         LoginCanvas.SetActive(true);
         logoutCanvas.SetActive(false);
+
+        voiceChat.Logout();
     }
 }
